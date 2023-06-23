@@ -1,0 +1,44 @@
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+  }
+
+  .tooltipDonut {
+    position: absolute;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .chart-container {
+    width: 900px;
+    height: 400px;
+  }
+
+  .legend-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .legend-color {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
