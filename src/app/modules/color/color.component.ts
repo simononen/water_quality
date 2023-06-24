@@ -71,10 +71,10 @@ export class ColorComponent implements AfterViewInit, OnDestroy {
         this.maxPop = Math.max(...this.data.map((x:any) => x['Color']), 0);
       }
 
-      this.districtCount = [...new Set( data.map((obj: any) => obj['District'])) ];
-      this.subCounties = [...new Set( data.map((obj: any) => obj['Sub-county'])) ];
-      this.villages = [...new Set( data.map((obj: any) => obj['Village'])) ];
-      this.waterSourceNames = [...new Set( data.map((obj: any) => obj['Source Name'])) ];
+      // this.districtCount = [...new Set( data.map((obj: any) => obj['District'])) ];
+      // this.subCounties = [...new Set( data.map((obj: any) => obj['Sub-county'])) ];
+      // this.villages = [...new Set( data.map((obj: any) => obj['Village'])) ];
+      // this.waterSourceNames = [...new Set( data.map((obj: any) => obj['Source Name'])) ];
 
       data?.forEach((item: any) => {
         this.dataSources.push(item);

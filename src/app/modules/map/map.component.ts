@@ -118,8 +118,16 @@ export class MapComponent implements AfterViewInit, OnDestroy {
         <span class="text-blue-400">${ data['District'] } </span> 
       </div>
       <div>
+        <span class="font-bold text-sm text-gray-500">Sub County:</span>
+        <span class="text-blue-400">${ data['Sub-county'] } </span>
+      </div>
+      <div>
         <span class="font-bold text-sm text-gray-500">Village:</span>
         <span class="text-blue-400">${ data['Village'] } </span>
+      </div>
+      <div>
+        <span class="font-bold text-sm text-gray-500">Parish:</span>
+        <span class="text-blue-400">${ data['Parish'] } </span>
       </div>
       <div>
         <span class="font-bold text-xs text-gray-500">Electrical Conductivity:</span>
@@ -128,9 +136,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       <div>
         <span class="font-bold text-xs text-gray-500">pH Status:</span>
         <span class="text-blue-400">${ data['pH'] } pH Units </span> 
-        <span [ngClass]="${(data['pH'] >= 5.5 && data['pH'] <= 9.5)} ? 'text-green-500' : 'text-red-500'"> - </span>
       </div>
-      <div id="chart_${data['id']}" class="h-80 w-auto"><svg class="country-popup-chart"></svg></div>
     `;
   }
 

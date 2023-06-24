@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './ph.component.html',
   styleUrls: ['./ph.component.scss'],
 })
-export class PhComponent implements AfterViewInit, OnDestroy {
+export class PhComponent implements OnInit, AfterViewInit, OnDestroy {
   dataset: any;
 
   mapOptions!: L.MapOptions;
@@ -59,6 +59,13 @@ export class PhComponent implements AfterViewInit, OnDestroy {
 
   constructor(private _dataService: DataService) {}
 
+  ngOnInit(): void {
+    this.districtCount = [];
+    this.subCounties = [];
+    this.villages = [];
+    this.waterSourceNames = [];
+  }
+
   ngAfterViewInit(): void {
     this.initMap();
   }
@@ -74,16 +81,16 @@ export class PhComponent implements AfterViewInit, OnDestroy {
         );
       }
 
-      this.districtCount = [
-        ...new Set(data.map((obj: any) => obj['District'])),
-      ];
-      this.subCounties = [
-        ...new Set(data.map((obj: any) => obj['Sub-county'])),
-      ];
-      this.villages = [...new Set(data.map((obj: any) => obj['Village']))];
-      this.waterSourceNames = [
-        ...new Set(data.map((obj: any) => obj['Source Name'])),
-      ];
+      // this.districtCount = [
+      //   ...new Set(data.map((obj: any) => obj['District'])),
+      // ];
+      // this.subCounties = [
+      //   ...new Set(data.map((obj: any) => obj['Sub-county'])),
+      // ];
+      // this.villages = [...new Set(data.map((obj: any) => obj['Village']))];
+      // this.waterSourceNames = [
+      //   ...new Set(data.map((obj: any) => obj['Source Name'])),
+      // ];
 
       data?.forEach((item: any) => {
         this.dataSources.push(item);
@@ -124,7 +131,6 @@ export class PhComponent implements AfterViewInit, OnDestroy {
         <span class="font-bold text-xs text-gray-500">pH Status:</span>
         <span class="text-blue-400">${data['pH']} pH Units </span>
       </div>
-      <div id="chart_${data['id']}" class="h-80 w-auto"><svg class="country-popup-chart"></svg></div>
     `
     );
   }

@@ -70,10 +70,10 @@ export class SodiumComponent implements AfterViewInit, OnDestroy {
         this.maxPop = Math.max(...this.data.map((x:any) => x['Sodium']), 0);
       }
 
-      this.districtCount = [...new Set( data.map((obj: any) => obj['District'])) ];
-      this.subCounties = [...new Set( data.map((obj: any) => obj['Sub-county'])) ];
-      this.villages = [...new Set( data.map((obj: any) => obj['Village'])) ];
-      this.waterSourceNames = [...new Set( data.map((obj: any) => obj['Source Name'])) ];
+      // this.districtCount = [...new Set( data.map((obj: any) => obj['District'])) ];
+      // this.subCounties = [...new Set( data.map((obj: any) => obj['Sub-county'])) ];
+      // this.villages = [...new Set( data.map((obj: any) => obj['Village'])) ];
+      // this.waterSourceNames = [...new Set( data.map((obj: any) => obj['Source Name'])) ];
 
       data?.forEach((item: any) => {
         this.dataSources.push(item);
@@ -113,9 +113,8 @@ export class SodiumComponent implements AfterViewInit, OnDestroy {
       </div>
       <div>
         <span class="font-bold text-xs text-gray-500">pH Status:</span>
-        <span class="text-blue-400">${ data['pH'] } pH Units </span>
+        <span class="text-blue-400">${ data['pH'] } </span>
       </div>
-      <div id="chart_${data['id']}" class="h-80 w-auto"><svg class="country-popup-chart"></svg></div>
     `;
   }
   
